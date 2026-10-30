@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* 日系可愛配色：奶油、櫻花粉、抹茶綠、天空藍、奶油黃 */
+@theme inline {
+  --color-cream: #fff8ee;
+  --color-paper: #fffdf8;
+  --color-ink: #5b4636;
+  --color-ink-soft: #8a7564;
+  --color-sakura: #f6b8c5;
+  --color-sakura-deep: #e98aa0;
+  --color-matcha: #a9c99b;
+  --color-matcha-deep: #6f9a62;
+  --color-sky: #aacde4;
+  --color-butter: #f8de8d;
+  --font-sans: var(--font-huninn), "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-round: var(--font-mplus-rounded), var(--font-huninn), sans-serif;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 方格筆記本底紋 */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(91, 70, 54, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 70, 54, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* 紙膠帶 */
+.washi {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.45) 0 6px,
+    transparent 6px 12px
+  );
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow {
+    animation: none;
+  }
+}
